@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">androidProject</string>
+    <string name="api_url">https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest</string>
+    <string name="api_key">ff5c949d-4a2a-4fca-8753-db63eaf50038</string>
 </resources>
