@@ -5,6 +5,9 @@ import static android.content.ContentValues.TAG;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,9 +18,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.net.*;
 
 class MakeRequest extends AsyncTask<String, Void, JSONObject> {
     JSONObject result;
@@ -36,7 +42,7 @@ class MakeRequest extends AsyncTask<String, Void, JSONObject> {
             url = new URL(myActivity.getString(R.string.api_url));
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestProperty("X-CMC_PRO_API_KEY", myActivity.getString(R.string.api_key));
-
+            String urlParameters = "start=1&limit=5000&convert=USD";
 
             try {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
@@ -82,5 +88,32 @@ class MakeRequest extends AsyncTask<String, Void, JSONObject> {
     protected void onPostExecute(JSONObject res) {
         Log.i("TEA","testo");
         Log.i("JFL","fin de postexec");
+
+        myActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Switch switch1 = (Switch) myActivity.findViewById(R.id.switch1);
+                switch1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean checked = ((Switch) v).isChecked();
+                        if (checked){
+                            TextView displayText=(TextView)myActivity.findViewById(R.id.displayText);
+                            JSONObject res = null;
+                            try {
+                                res= (JSONObject) result.getJSONArray("data").get(0);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            displayText.setText(res.toString());
+                        }
+                        else{
+                            TextView displayText=(TextView)myActivity.findViewById(R.id.displayText);
+                            displayText.setText("Nothing to display");
+                        }
+                    }
+                });
+            }
+        });
     }
 }
