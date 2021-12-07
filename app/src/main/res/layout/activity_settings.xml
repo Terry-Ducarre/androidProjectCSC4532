@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SettingsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,35 +12,37 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DucarreApp" />
-
-        <Button
-            android:id="@+id/refreshButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="Refresh" />
-
-        <TextView
-            android:id="@+id/displayText"
+            android:id="@+id/titleText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Default text" />
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bitcoin" />
-
-        <Button
-            android:id="@+id/settingsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:textColor="@color/purple_700"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
             android:text="Settings" />
 
-    </LinearLayout>
+        <CheckBox
+            android:id="@+id/btcBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BTC" />
 
+        <CheckBox
+            android:id="@+id/ethBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ETH" />
+
+        <CheckBox
+            android:id="@+id/chzBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHZ" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

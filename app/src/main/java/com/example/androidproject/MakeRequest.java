@@ -39,10 +39,11 @@ class MakeRequest extends AsyncTask<String, Void, JSONObject> {
         try {
             Log.i("URL",myActivity.getString(R.string.api_url));
             Log.i("KEY",myActivity.getString(R.string.api_key));
-            url = new URL(myActivity.getString(R.string.api_url));
+            url = new URL(myActivity.getString(R.string.api_url));//https://coinmarketcap.com/api/documentation/v1/
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestProperty("X-CMC_PRO_API_KEY", myActivity.getString(R.string.api_key));
-            String urlParameters = "start=1&limit=5000&convert=USD";
+            urlConnection.setRequestProperty("Accepts", "application/json");
+            //String urlParameters = "start=1&limit=5000&convert=USD";
 
             try {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
