@@ -11,13 +11,20 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import org.json.JSONObject;
 
+public class MainActivity extends AppCompatActivity {
+double btcPrice=0;
+JSONObject res;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //to access a string-array in ressources
+        //String[] test=getResources().getStringArray(R.array.symbol_list);
+        MakeRequest initReq=new MakeRequest(MainActivity.this);
+        initReq.execute();
         //refresh the list and displays a toast
         Button refreshButton=(Button) findViewById(R.id.refreshButton);
         refreshButton.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 req.execute();
             }
         });
-
         //go to settings page
         Button settingsButton=(Button) findViewById(R.id.settingsButton);
         settingsButton.setOnClickListener(new View.OnClickListener() {

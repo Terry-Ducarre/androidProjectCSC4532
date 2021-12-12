@@ -2,4 +2,22 @@
     <string name="app_name">androidProject</string>
     <string name="api_url">https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest</string>
     <string name="api_key">ff5c949d-4a2a-4fca-8753-db63eaf50038</string>
+    <string-array name="symbol_list"><item>BTC</item><item>ETH</item><item>BNB</item><item>USDT</item><item>SOL</item><item>ADA</item><item>USDC</item><item>XRP</item><item>LUNA</item><item>DOT</item><item>DOGE</item><item>AVAX</item><item>SHIB</item><item>MATIC</item><item>CRO</item><item>BUSD</item><item>WBTC</item><item>LTC</item><item>UNI</item><item>ALGO</item><item>TRX</item><item>LINK</item><item>UST</item><item>BCH</item>
+        <item>XLM</item><item>DAI</item><item>AXS</item><item>MANA</item><item>NEAR</item>
+        <item>FTT</item><item>VET</item><item>FIL</item><item>EGLD</item><item>ICP</item>
+        <item>ATOM</item><item>BTCB</item><item>ETC</item><item>SAND</item><item>HBAR</item>
+        <item>THETA</item><item>XTZ</item><item>FTM</item><item>LEO</item><item>XMR</item>
+        <item>KLAY</item><item>GALA</item><item>BTT</item><item>GRT</item><item>MIOTA</item>
+        <item>LRC</item><item>EOS</item><item>HNT</item><item>FLOW</item>
+        <item>CAKE</item><item>STX</item><item>BSV</item><item>KSM</item><item>MKR</item>
+        <item>AAVE</item><item>ZEC</item><item>XEC</item><item>AMP</item><item>ENJ</item>
+        <item>QNT</item><item>ONE</item><item>NEO</item><item>RUNE</item><item>KDA</item>
+        <item>WAVES</item><item>CHZ</item><item>BAT</item><item>KCS</item><item>HT</item>
+        <item>CRV</item><item>HOT</item><item>OKB</item><item>DASH</item><item>CELO</item>
+        <item>AR</item><item>TUSD</item><item>IOTX</item><item>TFUEL</item><item>COMP</item>
+        <item>NEXO</item><item>XEM</item><item>MINA</item><item>DCR</item><item>1INCH</item>
+        <item>WAXP</item><item>QTUM</item><item>VGX</item><item>USDP</item>
+        <item>IMX</item><item>CEL</item><item>XDC</item><item>OMG</item><item>RVN</item>
+        <item>ANKR</item><item>ROSE</item><item>AUDIO</item>
+    </string-array>
 </resources>

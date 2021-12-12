@@ -7,39 +7,85 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColor="@color/purple_700"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
             android:text="DucarreApp" />
 
         <Button
             android:id="@+id/refreshButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Refresh" />
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Settings"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity=""
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/stonksOrNot"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/alert_light_frame" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="WALLET : " />
+
+            <TextView
+                android:id="@+id/walletAndChangeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="value"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/displayText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Default text" />
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textSize="30sp"
+            android:text="List of chosen crypto" />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bitcoin" />
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <TableLayout
+                android:id="@+id/cryptoTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1">
+            </TableLayout>
 
-        <Button
-            android:id="@+id/settingsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Settings" />
+        </ScrollView>
 
     </LinearLayout>
 
